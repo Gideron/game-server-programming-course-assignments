@@ -9,3 +9,9 @@ C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\
 C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
 C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
 C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csprojAssemblyReference.cache
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csproj.CoreCompileInputs.cache
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfoInputs.cache
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb

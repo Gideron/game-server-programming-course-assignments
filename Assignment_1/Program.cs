@@ -1,19 +1,24 @@
 ﻿using System;
+using System.Threading.Tasks;
+using System.Net.Http;
+
 
 namespace Assignment_1
 {
+    public interface ICityBikeDataFetcher
+    {
+        Task<int> GetBikeCountInStation(string stationName);
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(args[0]);
-            RealTimeCityBikeDataFetcher();
-        }
-    }
+            
+            string input = Console.ReadLine();
+            var a = new RealTimeCityBikeDataFetcher();
+            a.GetBikeCountInStation(input);
 
-    public interface ICityBikeDataFetcher
-    {
-        Task<int> GetBikeCountInStation(string stationName);
+        }
     }
 
     class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
@@ -36,7 +41,11 @@ namespace Assignment_1
                 Console.WriteLine("\nException Caught!");	
                 Console.WriteLine("Message :{0} ",e.Message);
             }
-            return 0;
+        }
+
+        public Task<int> GetBikeCountInStation(string stationName)
+        {
+            throw new NotImplementedException();
         }
     }
 }

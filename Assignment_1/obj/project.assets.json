@@ -726,28 +726,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nicoa\\.nuget\\packages\\": {},
+    "C:\\Users\\TinK\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicoa\\OneDrive\\Työpöytä\\game-server-programming-course\\Assignment_1\\Assignment_1.csproj",
+      "projectUniqueName": "F:\\BackEnd-kurssi\\game-server-programming-course-assignments\\Assignment_1\\Assignment_1.csproj",
       "projectName": "Assignment_1",
-      "projectPath": "C:\\Users\\nicoa\\OneDrive\\Työpöytä\\game-server-programming-course\\Assignment_1\\Assignment_1.csproj",
-      "packagesPath": "C:\\Users\\nicoa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicoa\\OneDrive\\Työpöytä\\game-server-programming-course\\Assignment_1\\obj\\",
+      "projectPath": "F:\\BackEnd-kurssi\\game-server-programming-course-assignments\\Assignment_1\\Assignment_1.csproj",
+      "packagesPath": "C:\\Users\\TinK\\.nuget\\packages\\",
+      "outputPath": "F:\\BackEnd-kurssi\\game-server-programming-course-assignments\\Assignment_1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\nicoa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\TinK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
