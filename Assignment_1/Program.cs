@@ -60,6 +60,10 @@ namespace Assignment_1
             Console.WriteLine("---stationList.Stations---");
             Console.WriteLine(stationList.Stations);
             Console.WriteLine("------");
+            
+            //if station is found from stationList
+                //return/print bike count
+            //else throw exception
             throw new NotImplementedException(String.Format("Could not find station {0}", stationName));
         }
     }
