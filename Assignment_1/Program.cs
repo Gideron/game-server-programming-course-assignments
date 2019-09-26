@@ -17,24 +17,39 @@ namespace Assignment_1
             
             string input = Console.ReadLine();
             var a = new RealTimeCityBikeDataFetcher();
-            if (input.Any(c => char.IsDigit(c)))
+            if (!input.Any(c => char.IsDigit(c)))
             {
                 a.GetBikeCountInStation(input);
+            } else {
+                throw new NotImplementedException(String.Format("Invalid argument: {0} contains a number", stationName));
             }
-            
-            
-
         }
     }
 
     class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
     {
-        
+        static async Task Main()
+        {
+            try	
+            {
+                string api = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
+                System.Net.HttpClient client = new System.Net.HttpClient();
+                HttpResponseMessage response = await client.GetAsync(api);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine(responseBody);
+            }  
+            catch(HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");	
+                Console.WriteLine("Message :{0} ",e.Message);
+            }
+        }
 
         public Task<int> GetBikeCountInStation(string stationName)
         {
-            
-            throw new NotImplementedException(String.Format("Invalid argument: {0} is not a number", stationName));
+            throw new NotImplementedException(String.Format("Could not find station {0}", stationName));
         }
     }
 }

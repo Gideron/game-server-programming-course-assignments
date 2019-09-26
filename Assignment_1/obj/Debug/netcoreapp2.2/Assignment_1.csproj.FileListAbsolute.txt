@@ -20,3 +20,13 @@ F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\De
 F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.dev.json
 F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.dll
 F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.pdb
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.deps.json
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.json
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.dev.json
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.dll
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.pdb
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csprojAssemblyReference.cache
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfoInputs.cache
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
+C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb
