@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\nicoa\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\nicoa\\.nuget\\packages"
+      "C:\\Users\\nicoa\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }

@@ -30,3 +30,14 @@ C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\ne
 C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
 C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
 C:\GitRepos\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb
+D:\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csprojAssemblyReference.cache
+D:\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csproj.CoreCompileInputs.cache
+D:\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfoInputs.cache
+D:\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
+D:\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
+D:\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb
+D:\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.deps.json
+D:\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.json
+D:\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.dev.json
+D:\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.dll
+D:\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.pdb

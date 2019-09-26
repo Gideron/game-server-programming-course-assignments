@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Linq;
-
+using Newtonsoft.Json;
 
 namespace Assignment_1
 {
@@ -15,14 +15,14 @@ namespace Assignment_1
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
+            string input = args[0];
             var a = new RealTimeCityBikeDataFetcher();
             if (!input.Any(c => char.IsDigit(c)))
             {
                 a.GetBikeCountInStation(input);
             } else
             {
-                throw new NotImplementedException(String.Format("Invalid argument: {0} contains a number", stationName));
+                throw new NotImplementedException(String.Format("Invalid argument: {0} contains a number", input));
             }
         }
     }
