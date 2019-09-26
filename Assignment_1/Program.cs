@@ -15,7 +15,7 @@ namespace Assignment_1
     {
         static void Main(string[] args)
         {
-            string input = args[0];
+            string input = args[0].ToString();
             var a = new RealTimeCityBikeDataFetcher();
             if (!input.Any(c => char.IsDigit(c)))
             {
@@ -39,6 +39,9 @@ namespace Assignment_1
                 HttpResponseMessage response = await client.GetAsync(api);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("---responseBody---");
+                Console.WriteLine(responseBody);
+                Console.WriteLine("------");
 
                 //convert response to BikeRentalStationList
                 stationList = JsonConvert.DeserializeObject<BikeRentalStationList>(responseBody);
