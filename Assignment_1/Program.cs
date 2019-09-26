@@ -23,13 +23,12 @@ namespace Assignment_1
 
     class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
     {
-        string api = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
-        System.Net.HttpClient client = new System.Net.HttpClient();
- 
         static async Task Main()
         {
             try	
             {
+                string api = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
+                System.Net.HttpClient client = new System.Net.HttpClient();
                 HttpResponseMessage response = await client.GetAsync(api);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();

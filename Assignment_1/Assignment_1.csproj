@@ -9,8 +9,4 @@
     <PackageReference Include="NewtonSoft.Json" Version="12.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="System\Net\" />
-  </ItemGroup>
-
 </Project>

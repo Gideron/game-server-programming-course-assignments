@@ -15,3 +15,8 @@ F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\De
 F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
 F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
 F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.deps.json
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.json
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.dev.json
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.dll
+F:\BackEnd-kurssi\game-server-programming-course-assignments\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.pdb
