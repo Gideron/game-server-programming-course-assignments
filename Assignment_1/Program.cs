@@ -29,6 +29,7 @@ namespace Assignment_1
 
     class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
     {
+        private static BikeRentalStationList stationList = new BikeRentalStationList();
         static async Task Main()
         {
             try	
@@ -40,8 +41,8 @@ namespace Assignment_1
                 string responseBody = await response.Content.ReadAsStringAsync();
 
                 //convert response to BikeRentalStationList
-                BikeRentalStationList stationList = JsonConvert.DeserializeObject<BikeRentalStationList>(responseBody);
-                Console.WriteLine(stationList.Stations);
+                stationList = JsonConvert.DeserializeObject<BikeRentalStationList>(responseBody);
+                
             }  
             catch(HttpRequestException e)
             {
@@ -53,6 +54,9 @@ namespace Assignment_1
         public Task<int> GetBikeCountInStation(string stationName)
         {
             //get bikes from station using BikeRentalStationList
+            Console.WriteLine("---stationList.Stations---");
+            Console.WriteLine(stationList.Stations);
+            Console.WriteLine("------");
             throw new NotImplementedException(String.Format("Could not find station {0}", stationName));
         }
     }
