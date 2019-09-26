@@ -1,0 +1,11 @@
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.deps.json
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.json
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.runtimeconfig.dev.json
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.dll
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\bin\Debug\netcoreapp2.2\Assignment_1.pdb
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csprojAssemblyReference.cache
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.csproj.CoreCompileInputs.cache
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfoInputs.cache
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.AssemblyInfo.cs
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.dll
+C:\Users\nicoa\OneDrive\Työpöytä\game-server-programming-course\Assignment_1\obj\Debug\netcoreapp2.2\Assignment_1.pdb
