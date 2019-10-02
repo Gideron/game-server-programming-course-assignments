@@ -8,12 +8,14 @@ namespace Assignment_2
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            instantiatePlayers();
+            Console.WriteLine(players.count());
         }
 
         private void instantiatePlayers(){
             for(int i = 0; i < 1000000;i++){
                 //instantiate player with random Guid
-                Player p = new Player(Id = new Guid());
+                Player p = new Player(Id = Guid.NewGuid());
                 players.add(p);
             }
         }
