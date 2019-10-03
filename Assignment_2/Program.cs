@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Assignment_2
 {
     class Program
     {
-        public List<Player> players;
+        public static List<Player> players = new List<Player>();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             instantiatePlayers();
-            Console.WriteLine(players.count());
+            Console.WriteLine(players.Count);
         }
 
-        private void instantiatePlayers(){
+        private static void instantiatePlayers(){
             for(int i = 0; i < 1000000;i++){
                 //instantiate player with random Guid
-                Player p = new Player(Id = Guid.NewGuid());
-                players.add(p);
+                Player p = new Player();
+                p.Id = Guid.NewGuid();
+                players.Add(p);
             }
         }
 
