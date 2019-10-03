@@ -12,6 +12,7 @@ namespace Assignment_2
             Console.WriteLine("Hello World!");
             instantiatePlayers();
             Console.WriteLine(players.Count);
+            checkDuplicatePlayers();
         }
 
         private static void instantiatePlayers(){
@@ -23,10 +24,15 @@ namespace Assignment_2
             }
         }
 
-        private void checkDuplicatePlayers(){
-            foreach(Player p in players){
-            }
-            //or lambda?
+        private static void checkDuplicatePlayers(){
+            /*foreach(Player p in players){
+                foreach(Player p2 in players){
+                    if(p.Equals(p2))
+                        continue;
+                    if(p.Id.Equals(p2.Id))
+                        Console.WriteLine("Found duplicate");
+                }
+            }*/
         }
     }
 }
