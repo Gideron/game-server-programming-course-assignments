@@ -34,5 +34,19 @@ namespace Assignment_2
                 }
             }*/
         }
+
+        private static Item FirstItem(Player p){
+            if((p.Items!= null) && (!p.Items.Any()))
+                return p.Items[0];
+            else
+                return null;
+        }
+
+        private static Item FirstItemWithLinq(Player p){
+            if((p.Items!= null) && (!p.Items.Any()))
+                return p.Items.First();
+            else
+                return null;
+        }
     }
 }
