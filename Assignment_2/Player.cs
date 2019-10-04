@@ -8,10 +8,7 @@ public class Player : IPlayer
     public List<Item> Items { get; set; }
 
     public Item GetHighestLevelItem(){
-        Item rtrn = Items[0];
-        foreach(Item i in Items){
-            //if()
-        }
-        return null;
+        Items.Sort((p, q) => p.Level.CompareTo(q.Level));
+        return Items[0];;
     }
 }
