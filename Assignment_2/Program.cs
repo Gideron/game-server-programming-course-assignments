@@ -18,6 +18,7 @@ namespace Assignment_2
             foreach(Player p in players){
                 ProcessEachItem(p, PrintItem);
             }
+            players.ForEach(p => ProcessEachItem(p, PrintItem));
 
             Game<Player> game = new Game<Player>(players);
             foreach(Player p in game.GetTop10Players()){
