@@ -81,12 +81,17 @@ namespace Assignment_2
                 return null;
         }
 
-        private static void ProcessEachItem(Player player, Action<Item> process)
+        //private static void ProcessEachItem(Player player, Action<Item> process)
+        //{
+        //    foreach(var item in player.Items)
+        //    {
+        //        process(item);
+        //    }
+        //}
+
+        private static void ProcessEachItemLambda(Player player, Action<Item> process)
         {
-            foreach(var item in player.Items)
-            {
-                process(item);
-            }
+            ProcessEachItemLambda(player, p => PrintItem(p));
         }
 
         private static void PrintItem(Item item){
