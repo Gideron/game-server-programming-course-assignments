@@ -13,13 +13,26 @@ namespace Assignment_2
             instantiatePlayers();
             Console.WriteLine(players.Count);
             checkDuplicatePlayers();
+
+            foreach(Player p in players){
+                ProcessEachItem(p, PrintItem);
+            }
         }
 
         private static void instantiatePlayers() {
-            for (int i = 0; i < 1000000; i++) {
+            //should be 1000000
+            for (int i = 0; i < 10; i++) {
                 //instantiate player with random Guid
                 Player p = new Player();
                 p.Id = Guid.NewGuid();
+
+                //Add item
+                Item it = new Item();
+                it.Id = Guid.NewGuid();
+                it.Level = 1;
+                p.Items = new List<Item>();
+                p.Items.Add(it);
+
                 players.Add(p);
             }
         }
@@ -44,15 +57,14 @@ namespace Assignment_2
                 array[i] = p.Items[i];
             }
             return array;
-
         }
 
-        private static Item[]  GetItemsWithLinq(Player p)
+        private static Item[] GetItemsWithLinq(Player p)
         {
             Item[] array = p.Items.ToArray();
-
             return array;
         }
+
         private static Item FirstItem(Player p)
         {
             if ((p.Items != null) && (!p.Items.Any()))
@@ -68,8 +80,17 @@ namespace Assignment_2
             else
                 return null;
         }
-    }
 
-    
-    
+        private static void ProcessEachItem(Player player, Action<Item> process)
+        {
+            foreach(var item in player.Items)
+            {
+                process(item);
+            }
+        }
+
+        private static void PrintItem(Item item){
+            Console.WriteLine("Id:" + item.Id + ", Level:" + item.Level);
+        }
+    }
 }
