@@ -15,8 +15,8 @@ namespace Assignment_2
             checkDuplicatePlayers();
         }
 
-        private static void instantiatePlayers(){
-            for(int i = 0; i < 1000000;i++){
+        private static void instantiatePlayers() {
+            for (int i = 0; i < 1000000; i++) {
                 //instantiate player with random Guid
                 Player p = new Player();
                 p.Id = Guid.NewGuid();
@@ -24,7 +24,7 @@ namespace Assignment_2
             }
         }
 
-        private static void checkDuplicatePlayers(){
+        private static void checkDuplicatePlayers() {
             /*foreach(Player p in players){
                 foreach(Player p2 in players){
                     if(p.Equals(p2))
@@ -35,18 +35,41 @@ namespace Assignment_2
             }*/
         }
 
-        private static Item FirstItem(Player p){
-            if((p.Items!= null) && (!p.Items.Any()))
+        private static Item[] GetItems(Player p)
+        {
+            int c = p.Items.Count();
+            Item[] array = new Item[c];
+            for (int i = 0; i < c; i++)
+            {
+                array[i] = p.Items[i];
+            }
+            return array;
+
+        }
+
+        private static Item[]  GetItemsWithLinq(Player p)
+        {
+            Item[] array = p.Items.ToArray();
+
+            return array;
+        }
+        private static Item FirstItem(Player p)
+        {
+            if ((p.Items != null) && (!p.Items.Any()))
                 return p.Items[0];
             else
                 return null;
         }
 
-        private static Item FirstItemWithLinq(Player p){
-            if((p.Items!= null) && (!p.Items.Any()))
+        private static Item FirstItemWithLinq(Player p)
+        {
+            if ((p.Items != null) && (!p.Items.Any()))
                 return p.Items.First();
             else
                 return null;
         }
     }
+
+    
+    
 }
