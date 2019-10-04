@@ -7,6 +7,7 @@ namespace Assignment_2
     class Program
     {
         public static List<Player> players = new List<Player>();
+        public static List<PlayerForAnotherGame> other_players = new List<PlayerForAnotherGame>();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -16,6 +17,16 @@ namespace Assignment_2
 
             foreach(Player p in players){
                 ProcessEachItem(p, PrintItem);
+            }
+
+            Game<Player> game = new Game<Player>(players);
+            foreach(Player p in game.GetTop10Players()){
+                Console.WriteLine("Score:" + p.Score);
+            }
+            
+            Game<PlayerForAnotherGame> anotherGame = new Game<PlayerForAnotherGame>(other_players);
+            foreach(PlayerForAnotherGame p in anotherGame.GetTop10Players()){
+                Console.WriteLine("Score:" + p.Score);
             }
         }
 
