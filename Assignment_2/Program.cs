@@ -26,6 +26,7 @@ namespace Assignment_2
             }
             
             Game<PlayerForAnotherGame> anotherGame = new Game<PlayerForAnotherGame>(other_players);
+            //gives error without players
             foreach(PlayerForAnotherGame p in anotherGame.GetTop10Players()){
                 Console.WriteLine("Score:" + p.Score);
             }
