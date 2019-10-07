@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System;
+
 [Route("api/[controller]")]
 [ApiController]
 public class PlayersController
@@ -31,8 +32,7 @@ public class PlayersController
 
     [HttpPost]
     [Route("")]
-    
-    public async Task<Player> CreateAsync(NewPlayer player)
+    public async Task<Player> CreateAsync(NewPlayer newPlayer)
     {
         _logger.LogInformation("Creating player with name " + newPlayer.Name);
         var player = new Player()
