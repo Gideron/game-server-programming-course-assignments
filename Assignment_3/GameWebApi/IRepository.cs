@@ -1,3 +1,6 @@
+using System;
+using System.Threading.Tasks;
+
 public interface IRepository
 {
     Task<Player> Get(Guid id);
@@ -5,4 +8,5 @@ public interface IRepository
     Task<Player> Create(Player player);
     Task<Player> Modify(Guid id, ModifiedPlayer player);
     Task<Player> Delete(Guid id);
+    Task CreatePlayer(Player player);
 }
