@@ -31,7 +31,7 @@ public class PlayersController
 
     [HttpPost]
     [Route("")]
-    [ValidateModel]
+    
     public async Task<Player> CreateAsync(NewPlayer player)
     {
         _logger.LogInformation("Creating player with name " + newPlayer.Name);
@@ -39,13 +39,13 @@ public class PlayersController
         {
             Id = Guid.NewGuid(),
             Name = newPlayer.Name,
-            CreationTime = DateTime.Now()
+            CreationTime = DateTime.Now
         };
         await _repository.CreatePlayer(player);
         return player;
     }
 
-    [HttpUpdate]
+    [HttpPut]
     [Route("{playerId}")]
     public async Task<Player> ModifyAsync(Guid id, ModifiedPlayer player)
     {
