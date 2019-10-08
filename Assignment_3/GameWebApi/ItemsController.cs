@@ -18,25 +18,27 @@ public class ItemsController
 
     [HttpGet]
     [Route("{itemId}")]
-    public async Task<Item> GetAsync(Guid id)
+    public async Task<Item> Get(Guid id)
     {
-        
-        return await _repository.GetI(id);
+        //return await _repository.Get(id);
+        throw new NotImplementedException();
     }
 
     [HttpGet]
     [Route("")]
-    public async Task<Item[]> GetAllAsync()
+    public async Task<Item[]> GetAll()
     {
+        //gets player with playerId and returns all items
         Console.WriteLine("GetALL");
-        return await _repository.GetAllI();
+        //return await _repository.GetAllI();
+        throw new NotImplementedException();
     }
 
     [HttpPost]
     [Route("")]
-    public async Task<Item> CreateAsync(NewItem newItem)
+    public async Task<Item> Create(NewItem newItem)
     {
-        _logger.LogInformation("Creating item with name " + newItem.Name);
+        /*_logger.LogInformation("Creating item with name " + newItem.Name);
         var item = new Item()
         {
             Id = Guid.NewGuid(),
@@ -45,20 +47,23 @@ public class ItemsController
             Type = newItem.Type
         };
         await _repository.CreateItem(item);
-        return item;
+        return item;*/
+        throw new NotImplementedException();
     }
 
     [HttpPut]
     [Route("{itemId}")]
-    public async Task<Item> ModifyAsync(Guid id, ModifiedItem item)
+    public async Task<Item> Modify(Guid id, ModifiedItem item)
     {
-        return await _repository.Modify(id, item);
+        //return await _repository.Modify(id, item);
+        throw new NotImplementedException();
     }
 
     [HttpDelete]
     [Route("{itemId}")]
-    public async Task<Item> DeleteAsync(Guid id)
+    public async Task<Item> Delete(Guid id)
     {
-        return await _repository.DeleteI(id);
+        //return await _repository.DeleteI(id);
+        throw new NotImplementedException();
     }
 }
