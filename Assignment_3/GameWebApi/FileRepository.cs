@@ -79,4 +79,9 @@ public class FileRepository : IRepository {
     {
         throw new NotImplementedException();
     }
+
+    Task<Item> IRepository.DeleteI(Guid id)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -59,6 +59,6 @@ public class ItemsController
     [Route("{itemId}")]
     public async Task<Item> DeleteAsync(Guid id)
     {
-        return await _repository.Delete(id);
+        return await _repository.DeleteI(id);
     }
 }
