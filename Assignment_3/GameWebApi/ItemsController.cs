@@ -44,7 +44,7 @@ public class ItemsController
             CreationTime = DateTime.Now,
             Type = newItem.Type
         };
-         await _repository.CreateItem(item);
+        await _repository.CreateItem(item);
         return item;
     }
 
@@ -57,7 +57,7 @@ public class ItemsController
 
     [HttpDelete]
     [Route("{itemId}")]
-    public async Task<Player> DeleteAsync(Guid id)
+    public async Task<Item> DeleteAsync(Guid id)
     {
         return await _repository.Delete(id);
     }
