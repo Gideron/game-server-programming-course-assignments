@@ -2,7 +2,7 @@ using System;
 
 public class Item
 {
-    enum ItemType {
+    public enum ItemType {
         SWORD, POTION, SHIELD
     }
     public Guid Id { get; set; }

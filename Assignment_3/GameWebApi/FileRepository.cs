@@ -59,4 +59,24 @@ public class FileRepository : IRepository {
     {
         throw new NotImplementedException();
     }
+
+    Task<Item> IRepository.Modify(Guid id, ModifiedItem item)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task IRepository.CreateItem(Item item)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<Item> IRepository.GetI(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<Item[]> IRepository.GetAllI()
+    {
+        throw new NotImplementedException();
+    }
 }

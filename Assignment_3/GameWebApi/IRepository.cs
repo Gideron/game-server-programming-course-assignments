@@ -9,4 +9,8 @@ public interface IRepository
     Task<Player> Modify(Guid id, ModifiedPlayer player);
     Task<Player> Delete(Guid id);
     Task CreatePlayer(Player player);
+    Task<Item> Modify(Guid id, ModifiedItem item);
+    Task<Item> GetI(Guid id);
+    Task<Item[]> GetAllI();
+    Task CreateItem(Item item);
 }

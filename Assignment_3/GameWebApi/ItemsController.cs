@@ -20,7 +20,8 @@ public class ItemsController
     [Route("{itemId}")]
     public async Task<Item> GetAsync(Guid id)
     {
-        return await _repository.Get(id);
+        
+        return await _repository.GetI(id);
     }
 
     [HttpGet]
@@ -28,7 +29,7 @@ public class ItemsController
     public async Task<Item[]> GetAllAsync()
     {
         Console.WriteLine("GetALL");
-        return await _repository.GetAll();
+        return await _repository.GetAllI();
     }
 
     [HttpPost]
@@ -43,7 +44,7 @@ public class ItemsController
             CreationTime = DateTime.Now,
             Type = newItem.Type
         };
-        await _repository.CreateItem(item);
+         await _repository.CreateItem(item);
         return item;
     }
 
@@ -56,7 +57,7 @@ public class ItemsController
 
     [HttpDelete]
     [Route("{itemId}")]
-    public async Task<Item> DeleteAsync(Guid id)
+    public async Task<Player> DeleteAsync(Guid id)
     {
         return await _repository.Delete(id);
     }
