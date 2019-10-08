@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System;
 
-[Route("api/[controller]")]
+[Route("api/players/{playerId}/items")]
 [ApiController]
 public class ItemsController
 {
