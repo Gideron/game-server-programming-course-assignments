@@ -34,6 +34,12 @@ public class PlayersController
     [Route("")]
     public async Task<Player> Create(NewPlayer newPlayer)
     {
+        /*foreach(Item i in newPlayer.Items){
+            if(i.Type == Item.ItemType.SWORD && newPlayer.Level < 3){
+                //exception
+            }
+        }*/
+
         _logger.LogInformation("Creating player with name " + newPlayer.Name);
         var player = new Player()
         {
