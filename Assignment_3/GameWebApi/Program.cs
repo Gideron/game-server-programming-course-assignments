@@ -19,6 +19,6 @@ namespace GameWebApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Middleware>();
+                .UseStartup<HttpStatusCodeException>();
     }
 }
