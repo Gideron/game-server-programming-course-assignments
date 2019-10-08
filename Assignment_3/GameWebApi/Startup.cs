@@ -35,11 +35,15 @@ namespace GameWebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseHttpStatusCodeExceptionMiddleware();
             }
             else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+
+                app.UseHttpStatusCodeExceptionMiddleware();
+                app.UseExceptionHandler();
             }
 
             //app.UseHttpsRedirection();
