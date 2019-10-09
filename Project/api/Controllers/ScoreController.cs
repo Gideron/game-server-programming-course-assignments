@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System;
+using api;
 
 [Route("api/players")]
 [ApiController]
@@ -10,7 +11,7 @@ public class ScoreController
     private readonly ILogger<ScoreController> _logger;
     private readonly IRepository _repository;
 
-    public ScoreController(ILogger<PlayersController> logger, IRepository repository)
+    public ScoreController(ILogger<ScoreController> logger, IRepository repository)
     {
         _logger = logger;
         _repository = repository;
@@ -39,7 +40,7 @@ public class ScoreController
         var player = new Player()
         {
             Name = newPlayer.Name,
-            score = newPlayer.Score
+            Score = newPlayer.Score
         };
         await _repository.Create(player);
         return player;
