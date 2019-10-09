@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour
         if (collision.transform.CompareTag("Enemy"))
         {
             GameControl gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
-            //gc.CreateNewScore();
+            gc.CreateNewScore();
         }
     }
 }

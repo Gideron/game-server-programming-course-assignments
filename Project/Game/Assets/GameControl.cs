@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
+    public string playerName = "Guest";
+    public float score = 0;
+
     private APIControlling apiController;
     public GameObject menuObject;
     public Text leaderList;
+    public Text scoreText;
 
     public bool paused;
-    public float score;
 
     void Awake()
     {
@@ -28,7 +31,10 @@ public class GameControl : MonoBehaviour
     void Update()
     {
         if (!paused)
+        {
             score += Time.deltaTime;
+            UpdateScoreText();
+        }
 
         if (Input.GetButtonDown("Cancel"))
             ToggleMenu(!paused);
@@ -58,5 +64,17 @@ public class GameControl : MonoBehaviour
             txt += p.playerName + " - " + p.score + "\n";
         }
         leaderList.text = txt;
+    }
+
+    public void CreateNewScore()
+    {
+        ToggleMenu(true);
+        apiController.Create(playerName, (int)score);
+        UpdateLeaders();
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = "Score: " + score;
     }
 }
