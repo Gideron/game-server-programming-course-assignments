@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
+using Newtonsoft.Json; 
 
 namespace api
 {
@@ -18,7 +19,7 @@ namespace api
 
         Task<Player[]> IRepository.GetAll()
         {
-            if (!File.Exists(filePath))
+            /*if (!File.Exists(filePath))
             {
                 //file not found
                 throw new NotImplementedException();
@@ -26,8 +27,8 @@ namespace api
 
             string readText = File.ReadAllText(filePath);
             Console.WriteLine(readText);
-            List<Player> pList = JsonUtility.FromJson<Player>(readText);
-            return pList.players;
+            var pList = JsonConvert.DeserializeObject<List<Player>>(readText).ToArray();
+            return new Task(pList);*/
             
             throw new NotImplementedException();
         }
