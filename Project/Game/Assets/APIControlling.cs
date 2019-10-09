@@ -11,7 +11,7 @@ public class APIControlling : MonoBehaviour
 
     public List<Player> GetAll()
     {
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/players"));
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players"));
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
@@ -21,7 +21,12 @@ public class APIControlling : MonoBehaviour
 
     public void Create(string pName, int pScore)
     {
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/players/{0}/{1}", pName, pScore));
+        Player p = new Player()
+        {
+            playerName = "playername",
+            score = pScore
+        };
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players/{0}", p));
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         //check if successful
@@ -31,7 +36,7 @@ public class APIControlling : MonoBehaviour
 public class Player
 {
     public string playerName { get; set; }
-    public string score { get; set; }
+    public int score { get; set; }
 }
 
 public class PlayerList

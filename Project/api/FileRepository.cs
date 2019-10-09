@@ -35,14 +35,14 @@ namespace api
 
         Task<Player> IRepository.Create(Player player)
         {
-            /*if (!File.Exists(filePath))
+            if (!File.Exists(filePath))
             {
                 //file not found
                 throw new NotImplementedException();
             }
-            
-            string appendText = "This is extra text" + Environment.NewLine;
-            File.AppendAllText(filePath, appendText, Encoding.UTF8);*/
+            string playerToCreate = JsonConvert.SerializeObject(player);
+            File.AppendAllText(filePath, playerToCreate, Encoding.UTF8);
+
             throw new NotImplementedException();
         }
 
