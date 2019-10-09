@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour
     void Awake()
     {
         paused = false;
+        apiController = this.GetComponent<APIControlling>();
     }
 
     // Start is called before the first frame update
@@ -28,6 +29,9 @@ public class GameControl : MonoBehaviour
     {
         if (!paused)
             score += Time.deltaTime;
+
+        if (Input.GetButtonDown("Cancel"))
+            ToggleMenu(!paused);
     }
 
     public void ToggleMenu(bool toggle) {
