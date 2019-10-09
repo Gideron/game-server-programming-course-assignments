@@ -7,10 +7,13 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 5f;
 
+    private GameControl gc;
+
     // Start is called before the first frame update
     void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
     }
 
     // Update is called once per frame
@@ -27,7 +30,6 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.transform.CompareTag("Enemy"))
         {
-            GameControl gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameControl>();
             gc.CreateNewScore();
         }
     }
