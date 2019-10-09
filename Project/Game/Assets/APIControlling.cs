@@ -4,6 +4,7 @@ using System.Net;
 using UnityEngine;
 using System.IO;
 using System;
+using UnityEngine.Networking;
 
 public class APIControlling : MonoBehaviour
 {
@@ -11,25 +12,39 @@ public class APIControlling : MonoBehaviour
 
     public List<Player> GetAll()
     {
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players"));
+        /*HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players"));
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
         PlayerList pList = JsonUtility.FromJson<PlayerList>(jsonResponse);
-        return pList.players;
+        return pList.players;*/
+        return null;
     }
 
-    public void Create(string pName, int pScore)
+    public IEnumerator Create(string pName, int pScore)
     {
-        Player p = new Player()
+        Debug.Log(pName + "-------------------" + pScore);
+        string b = "{\"Name\": \"" + pName + "\", \"Score\": " + pScore + "}";
+        Debug.Log(b);
+        var body = JsonUtility.ToJson(b);
+
+        var uwr = new UnityWebRequest(apiPath + "/api/players", "POST");
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(body);
+        uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        uwr.SetRequestHeader("Content-Type", "application/json");
+
+        //Send the request then wait here until it returns
+        yield return uwr.SendWebRequest();
+
+        if (uwr.isNetworkError)
         {
-            playerName = "playername",
-            score = pScore
-        };
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players/{0}", p));
-        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-        StreamReader reader = new StreamReader(response.GetResponseStream());
-        //check if successful
+            Debug.Log("Error While Sending: " + uwr.error);
+        }
+        else
+        {
+            Debug.Log("Received: " + uwr.downloadHandler.text);
+        }
     }
 }
 
