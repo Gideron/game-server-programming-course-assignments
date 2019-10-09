@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace api
 {
-    public interface FileRepository : IRepository
+    public class FileRepository : IRepository
     {
-        //private string txt_file = "game-score.txt";
+        private string txt_file = "game-score.txt";
         Task<Player> IRepository.Get(string name)
         {
             throw new NotImplementedException();
