@@ -33,9 +33,8 @@ public class ScoreController
 
     [HttpPost]
     [Route("")]
-    public async Task<Player> Create(NewPlayer newPlayer)
+    public async Task<Player> Create([FromBody] NewPlayer newPlayer)
     {
-
         _logger.LogInformation("Creating player with name " + newPlayer.Name);
         var player = new Player()
         {
