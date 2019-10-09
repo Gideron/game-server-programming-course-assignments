@@ -1,18 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
+using System.IO;
+using System;
 
 public class APIControlling : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    string apiPath = "http://localhost:5000";
 
-    // Update is called once per frame
-    void Update()
+    public List<Player> GetAll()
     {
-        
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/players"));
+        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        StreamReader reader = new StreamReader(response.GetResponseStream());
+        string jsonResponse = reader.ReadToEnd();
+        PlayerList pList = JsonUtility.FromJson<PlayerList>(jsonResponse);
+        return pList.players;
     }
+}
+
+public class Player
+{
+    public string playerName { get; set; }
+    public string score { get; set; }
+}
+
+public class PlayerList
+{
+    public List<Player> players { get; set; }
 }
