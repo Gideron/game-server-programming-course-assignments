@@ -32,7 +32,7 @@ public class ScoreController
     }
 
     [HttpPost]
-    [Route("{application/Json}")]
+    [Route("")]
     public async Task<Player> Create(NewPlayer newPlayer)
     {
 
