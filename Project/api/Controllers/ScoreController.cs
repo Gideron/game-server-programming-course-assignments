@@ -39,6 +39,7 @@ public class ScoreController
         var player = new Player()
         {
             Name = newPlayer.Name,
+            score = newPlayer.Score
         };
         await _repository.Create(player);
         return player;
