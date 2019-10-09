@@ -26,6 +26,7 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IRepository, FileRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
