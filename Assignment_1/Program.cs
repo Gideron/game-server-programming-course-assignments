@@ -19,37 +19,16 @@ namespace Assignment_1
             string input = args[0].ToString();
             var a = new RealTimeCityBikeDataFetcher();
             var bikeCount = a.GetBikeCountInStation(input);
-            //if(bikeCount.IsDigit)
+            Console.WriteLine("\n---- Response: " + bikeCount);
+            if(bikeCount != null)
                 Console.WriteLine("Station " + input + " has " + bikeCount.Result + " bikes available");
         }
     }
 
     class RealTimeCityBikeDataFetcher : ICityBikeDataFetcher
     {
-        //private static BikeRentalStationList stationList = new BikeRentalStationList();
-        static async Task Main()
-        {
-            /*try	
-            {
-                string api = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
-                System.Net.HttpClient client = new System.Net.HttpClient();
-                HttpResponseMessage response = await client.GetAsync(api);
-                response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine("---responseBody---");
-                Console.WriteLine(responseBody);
-                Console.WriteLine("------");
-
-                //convert response to BikeRentalStationList
-                stationList = JsonConvert.DeserializeObject<BikeRentalStationList>(responseBody);
-                
-            }  
-            catch(HttpRequestException e)
-            {
-                Console.WriteLine("\nException Caught!");	
-                Console.WriteLine("Message :{0} ", e.Message);
-            }*/
-        }
+        HttpClient client = new HttpClient();
+        private string api = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
 
         public async Task<int> GetBikeCountInStation(string stationName)
         {
@@ -58,30 +37,22 @@ namespace Assignment_1
             
             try	
             {
-                string api = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
-                System.Net.HttpClient client = new System.Net.HttpClient();
-                HttpResponseMessage response = await client.GetAsync(api);
+                /*HttpResponseMessage response = await client.GetAsync(api);
                 response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
-                //string responseBody = await client.GetStringAsync(api);
-                Console.WriteLine("---responseBody---");
-                Console.WriteLine(responseBody);
-                Console.WriteLine("------");
+                string responseBody = await response.Content.ReadAsStringAsync();*/
+                string responseBody = await client.GetStringAsync(api);
 
                 //convert response to BikeRentalStationList
                 BikeRentalStationList stationList = JsonConvert.DeserializeObject<BikeRentalStationList>(responseBody);
 
-                bool found = false;
                 foreach(Station s in stationList.stations){
                     Console.WriteLine("- Station " + s.name);
                     if(s.name.Equals(stationName)){
-                        found = true;
-                        Console.WriteLine("Station " + stationName + " has " + s.bikesAvailable + " bikes available");
+                        //Console.WriteLine("Station " + stationName + " has " + s.bikesAvailable + " bikes available");
                         return s.bikesAvailable;
                     }
                 }
-                if(!found)
-                    throw new NotImplementedException(String.Format("Could not find station {0}", stationName));
+                throw new NotImplementedException(String.Format("Could not find station {0}", stationName));
                 //throw NotFoundException(String.Format("Could not find station {0}", stationName));
             }  
             catch(HttpRequestException e)
@@ -96,7 +67,6 @@ namespace Assignment_1
 
     public class Station
     {
-        
         public string id { get; set; }
         public string name { get; set; }
         public double x { get; set; }
@@ -110,6 +80,7 @@ namespace Assignment_1
         public List<string> networks { get; set; }
         public bool realTimeData { get; set; }
     }
+
     class BikeRentalStationList
     {
         //public string Stations { get; set; }
