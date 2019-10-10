@@ -732,11 +732,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\game-server-programming-course-assignments\\Assignment_1\\Assignment_1.csproj",
+      "projectUniqueName": "C:\\GitRepos\\game-server-programming-course-assignments\\Assignment_1\\Assignment_1.csproj",
       "projectName": "Assignment_1",
-      "projectPath": "D:\\game-server-programming-course-assignments\\Assignment_1\\Assignment_1.csproj",
+      "projectPath": "C:\\GitRepos\\game-server-programming-course-assignments\\Assignment_1\\Assignment_1.csproj",
       "packagesPath": "C:\\Users\\nicoa\\.nuget\\packages\\",
-      "outputPath": "D:\\game-server-programming-course-assignments\\Assignment_1\\obj\\",
+      "outputPath": "C:\\GitRepos\\game-server-programming-course-assignments\\Assignment_1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -776,10 +776,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
