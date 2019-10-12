@@ -25,10 +25,10 @@ public class APIControlling : MonoBehaviour
         Debug.Log(pName + "-------------------" + pScore);
         string b = "{\"Name\": \"" + pName + "\", \"Score\": " + pScore + "}";
         Debug.Log(b);
-        var body = JsonUtility.ToJson(b);
+        //var body = JsonUtility.ToJson(b);
 
         var uwr = new UnityWebRequest(apiPath + "/api/players", "POST");
-        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(body);
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(b);
         uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
         uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         uwr.SetRequestHeader("Content-Type", "application/json");
