@@ -16,11 +16,8 @@ public class APIControlling : MonoBehaviour
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
-        Debug.Log(jsonResponse);
         PlayerList pList = JsonUtility.FromJson<PlayerList>(jsonResponse);
-        Debug.Log(pList.Players[0]);
         return pList.Players;
-        //return null;
     }
 
     public IEnumerator Create(string pName, int pScore)
