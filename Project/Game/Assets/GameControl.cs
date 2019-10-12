@@ -47,7 +47,7 @@ public class GameControl : MonoBehaviour
             Time.timeScale = 0;
             menuObject.SetActive(paused);
             UpdateLeaders();
-            //TODO reset game (score, etc.)
+            ResetLevel();
         } else {
             paused = false;
             menuObject.SetActive(paused);
@@ -76,5 +76,15 @@ public class GameControl : MonoBehaviour
     private void UpdateScoreText()
     {
         scoreText.text = "Score: " + score;
+    }
+
+    public void ResetLevel()
+    {
+        score = 0;
+        UpdateScoreText();
+        foreach(GameObject e in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            Destroy(e);
+        }
     }
 }
