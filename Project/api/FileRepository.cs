@@ -17,15 +17,14 @@ namespace api
             throw new NotImplementedException();
         }
 
-        async Task<Player[]> IRepository.GetAll()
+        async Task<string> IRepository.GetAll()
         {
             if (!File.Exists(filePath))
                 throw new NotImplementedException();
 
             try	{
                 string responseBody = File.ReadAllText(filePath);
-                PlayerList pList = JsonConvert.DeserializeObject<PlayerList>(responseBody);
-                return pList.players.ToArray();
+                return responseBody;
             } catch {
                 throw new NotImplementedException("Could not get players");
             }

@@ -26,7 +26,7 @@ public class ScoreController
 
     [HttpGet]
     [Route("")]
-    public async Task<Player[]> GetAll()
+    public async Task<string> GetAll()
     {
         return await _repository.GetAll();
     }
