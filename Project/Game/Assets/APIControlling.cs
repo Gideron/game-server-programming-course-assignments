@@ -22,7 +22,7 @@ public class APIControlling : MonoBehaviour
 
     public IEnumerator Create(string pName, int pScore)
     {
-        Debug.Log(pName + "-------------------" + pScore);
+        Debug.Log(pName + ":-------------------:" + pScore);
         string b = "{\"Name\": \"" + pName + "\", \"Score\": " + pScore + "}";
         Debug.Log(b);
         //var body = JsonUtility.ToJson(b);
