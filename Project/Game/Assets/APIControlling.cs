@@ -18,8 +18,8 @@ public class APIControlling : MonoBehaviour
         string jsonResponse = reader.ReadToEnd();
         Debug.Log(jsonResponse);
         PlayerList pList = JsonUtility.FromJson<PlayerList>(jsonResponse);
-        Debug.Log(pList.players[0]);
-        return pList.players;
+        Debug.Log(pList.Players[0]);
+        return pList.Players;
         //return null;
     }
 
@@ -60,5 +60,5 @@ public class Player
 [System.Serializable]
 public class PlayerList
 {
-    public List<Player> players;
+    public List<Player> Players;
 }
