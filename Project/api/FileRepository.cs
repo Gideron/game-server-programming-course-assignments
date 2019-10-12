@@ -9,7 +9,7 @@ namespace api
 {
     public class FileRepository : IRepository
     {
-        private string filePath = "game-score.txt";
+        private string filePath = "game-score.json";
         //File.ReadAllText  File.WriteAllText
 
         Task<Player> IRepository.Get(string name)
@@ -20,28 +20,13 @@ namespace api
         async Task<Player[]> IRepository.GetAll()
         {
             if (!File.Exists(filePath))
-            {
-                //file not found
                 throw new NotImplementedException();
-            }
 
-            try	
-            {
-                Console.WriteLine("-----------1111111111------------");
+            try	{
                 string responseBody = File.ReadAllText(filePath);
-                Console.WriteLine("responseBody: " + responseBody);
-                Console.WriteLine("-----------2222222222------------");
-                //convert response to BikeRentalStationList
                 PlayerList pList = JsonConvert.DeserializeObject<PlayerList>(responseBody);
-                foreach(Player p in pList.players){
-                    Console.WriteLine(p.Name + "\n");
-                }
-                Console.WriteLine("-----------3333333333------------");
-                
                 return pList.players.ToArray();
-            }  
-            catch
-            {
+            } catch {
                 throw new NotImplementedException("Could not get players");
             }
         }
@@ -50,7 +35,6 @@ namespace api
         {
             if (!File.Exists(filePath))
             {
-                //file not found
                 throw new NotImplementedException();
             }
             string playerToCreate = JsonConvert.SerializeObject(player);
