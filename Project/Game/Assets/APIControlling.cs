@@ -12,13 +12,13 @@ public class APIControlling : MonoBehaviour
 
     public List<Player> GetAll()
     {
-        /*HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players"));
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format(apiPath + "/api/players"));
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
         PlayerList pList = JsonUtility.FromJson<PlayerList>(jsonResponse);
-        return pList.players;*/
-        return null;
+        return pList.players;
+        //return null;
     }
 
     public IEnumerator Create(string pName, int pScore)

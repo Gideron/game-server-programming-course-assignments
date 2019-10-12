@@ -57,13 +57,13 @@ public class GameControl : MonoBehaviour
 
     public void UpdateLeaders()
     {
-        /*List<Player> players = apiController.GetAll();
+        List<Player> players = apiController.GetAll();
         string txt = "";
         foreach(Player p in players)
         {
             txt += p.playerName + " - " + p.score + "\n";
         }
-        leaderList.text = txt;*/
+        leaderList.text = txt;
     }
 
     public void CreateNewScore()
