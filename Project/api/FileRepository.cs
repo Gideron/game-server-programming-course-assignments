@@ -27,12 +27,18 @@ namespace api
 
             try	
             {
+                Console.WriteLine("-----------1111111111------------");
                 string responseBody = File.ReadAllText(filePath);
-
+                Console.WriteLine("responseBody: " + responseBody);
+                Console.WriteLine("-----------2222222222------------");
                 //convert response to BikeRentalStationList
-                List<Player> pList = JsonConvert.DeserializeObject<List<Player>>(responseBody);
-
-                return pList.ToArray();
+                PlayerList pList = JsonConvert.DeserializeObject<PlayerList>(responseBody);
+                foreach(Player p in pList.players){
+                    Console.WriteLine(p.Name + "\n");
+                }
+                Console.WriteLine("-----------3333333333------------");
+                
+                return pList.players.ToArray();
             }  
             catch
             {
@@ -62,5 +68,9 @@ namespace api
         {
             throw new NotImplementedException();
         }
+    }
+
+    public class PlayerList {
+        public List<Player> players { get; set; }
     }
 }
