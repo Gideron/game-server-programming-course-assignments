@@ -61,7 +61,8 @@ public class GameControl : MonoBehaviour
         string txt = "";
         foreach(Player p in players)
         {
-            txt += p.playerName + " - " + p.score + "\n";
+            Debug.Log(p.Name + " - " + p.Score);
+            txt += p.Name + " - " + p.Score + "\n";
         }
         leaderList.text = txt;
     }

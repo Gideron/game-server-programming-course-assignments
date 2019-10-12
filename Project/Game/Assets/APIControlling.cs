@@ -16,7 +16,9 @@ public class APIControlling : MonoBehaviour
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
+        Debug.Log(jsonResponse);
         PlayerList pList = JsonUtility.FromJson<PlayerList>(jsonResponse);
+        Debug.Log(pList.players[0]);
         return pList.players;
         //return null;
     }
@@ -48,13 +50,15 @@ public class APIControlling : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class Player
 {
-    public string playerName { get; set; }
-    public int score { get; set; }
+    public string Name;
+    public int Score;
 }
 
+[System.Serializable]
 public class PlayerList
 {
-    public List<Player> players { get; set; }
+    public List<Player> players;
 }
