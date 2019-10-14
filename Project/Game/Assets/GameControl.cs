@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour
     public GameObject menuObject;
     public Text leaderList;
     public Text scoreText;
+    public Text playerNameText;
 
     public bool paused;
 
@@ -69,8 +70,9 @@ public class GameControl : MonoBehaviour
 
     public void CreateNewScore()
     {
+        playerName = playerNameText.text.Length > 0 ? "Guest" : playerNameText.text;
+        StartCoroutine(apiController.Create(playerName, Mathf.RoundToInt(score)));
         ToggleMenu(true);
-        StartCoroutine(apiController.Create(playerName, (int)score));
         UpdateLeaders();
     }
 
