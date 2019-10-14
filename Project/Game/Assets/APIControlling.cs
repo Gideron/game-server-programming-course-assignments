@@ -22,10 +22,7 @@ public class APIControlling : MonoBehaviour
 
     public IEnumerator Create(string pName, int pScore)
     {
-        Debug.Log(pName + ":-------------------:" + pScore);
         string b = "{\"Name\": \"" + pName + "\", \"Score\": " + pScore + "}";
-        Debug.Log(b);
-        //var body = JsonUtility.ToJson(b);
 
         var uwr = new UnityWebRequest(apiPath + "/api/players", "POST");
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(b);

@@ -1960,6 +1960,8 @@ MonoBehaviour:
   menuObject: {fileID: 259228860}
   leaderList: {fileID: 1188973899}
   scoreText: {fileID: 1279654330}
+  playerNameInput: {fileID: 773631380}
+  apiInput: {fileID: 1367689750}
   paused: 0
 --- !u!1 &1635712372
 GameObject:

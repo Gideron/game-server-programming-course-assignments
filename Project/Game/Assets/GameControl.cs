@@ -12,6 +12,8 @@ public class GameControl : MonoBehaviour
     public GameObject menuObject;
     public Text leaderList;
     public Text scoreText;
+    public InputField playerNameInput;
+    public InputField apiInput;
 
     public bool paused;
 
@@ -46,9 +48,13 @@ public class GameControl : MonoBehaviour
             paused = true;
             Time.timeScale = 0;
             menuObject.SetActive(paused);
+            playerNameInput.text = playerName.Length > 0 ? playerName : "Guest";
+            apiInput.text = apiController.apiPath.Length > 0 ? apiController.apiPath : "http://localhost:5000";
             UpdateLeaders();
             ResetLevel();
         } else {
+            playerName = playerNameInput.text.Length > 0 ? playerNameInput.text : "Guest";
+            apiController.apiPath = apiInput.text.Length > 0 ? apiInput.text : "http://localhost:5000";
             paused = false;
             menuObject.SetActive(paused);
             Time.timeScale = 1;
@@ -58,6 +64,7 @@ public class GameControl : MonoBehaviour
     public void UpdateLeaders()
     {
         List<Player> players = apiController.GetAll();
+        players.Sort((p1, p2) => p2.Score.CompareTo(p1.Score));
         string txt = "";
         foreach(Player p in players)
         {
@@ -69,8 +76,8 @@ public class GameControl : MonoBehaviour
 
     public void CreateNewScore()
     {
+        StartCoroutine(apiController.Create(playerName, Mathf.RoundToInt(score)));
         ToggleMenu(true);
-        StartCoroutine(apiController.Create(playerName, (int)score));
         UpdateLeaders();
     }
 
@@ -87,5 +94,8 @@ public class GameControl : MonoBehaviour
         {
             Destroy(e);
         }
+        Rigidbody2D pRb2 = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        pRb2.velocity = Vector3.zero;
+        pRb2.angularVelocity = 0;
     }
 }
