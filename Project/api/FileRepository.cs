@@ -30,14 +30,23 @@ namespace api
             }
         }
 
-        Task<Player> IRepository.Create(Player player)
+        async Task<Player> IRepository.Create(Player player)
         {
             if (!File.Exists(filePath))
             {
                 throw new NotImplementedException();
             }
-            string playerToCreate = JsonConvert.SerializeObject(player);
-            File.AppendAllText(filePath, playerToCreate, Encoding.UTF8);
+
+            try	{
+                string responseBody = File.ReadAllText(filePath);
+                PlayerList pl = JsonConvert.DeserializeObject<PlayerList>(responseBody);
+                pl.Players.Add(player);
+                string newPlayerList = JsonConvert.SerializeObject(pl);
+                File.WriteAllText(filePath, newPlayerList, Encoding.UTF8);
+                return player;
+            } catch {
+                throw new NotImplementedException("Could not get players");
+            }
 
             throw new NotImplementedException();
         }
@@ -54,6 +63,6 @@ namespace api
     }
 
     public class PlayerList {
-        public List<Player> players { get; set; }
+        public List<Player> Players { get; set; }
     }
 }

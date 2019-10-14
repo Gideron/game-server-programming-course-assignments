@@ -1,12 +1,1 @@
-{
-    "Players":[
-        {
-            "Name":"Test Name",
-            "Score":1
-        },
-        {
-            "Name":"Test Name",
-            "Score":1
-        }
-    ]
-}
+﻿{"Players":[{"Name":"NICO","Score":22},{"Name":"NICO","Score":10}]}
