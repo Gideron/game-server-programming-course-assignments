@@ -7,52 +7,52 @@ public class FileRepository : IRepository {
     private string txt_file = "game-dev.txt";
     //File.ReadAllText  File.WriteAllText
 
-    public IEnumerable<Player> Get(Guid id)
+    public async Task<Player> Get(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Player[]> GetAll()
+    public async Task<Player[]> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Player> Create(Player player)
+    public async Task<Player> Create(Player player)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Player> Modify(Guid id, ModifiedPlayer player)
+    public async Task<Player> Modify(Guid id, ModifiedPlayer player)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Player> Delete(Guid id)
+    public async Task<Player> Delete(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> GetItem(Guid id)
+    public async Task<Item> GetItem(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item[]> GetAllItems()
+    public async Task<Item[]> GetAllItems()
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> CreateItem(Guid id, Item item)
+    public async Task<Item> CreateItem(Guid id, Item item)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> ModifyItem(Guid id, ModifiedItem item)
+    public async Task<Item> ModifyItem(Guid id, ModifiedItem item)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> DeleteItem(Guid id)
+    public async Task<Item> DeleteItem(Guid id)
     {
         throw new NotImplementedException();
     }

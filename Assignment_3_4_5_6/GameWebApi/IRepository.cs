@@ -6,16 +6,16 @@ using System.Collections.Generic;
 public interface IRepository
 {
     //Player
-    IEnumerable<Player> Get(Guid id);
-    IEnumerable<Player[]> GetAll();
-    IEnumerable<Player> Create(Player player);
-    IEnumerable<Player> Modify(Guid id, ModifiedPlayer player);
-    IEnumerable<Player> Delete(Guid id);
+    Task<Player> Get(Guid id);
+    Task<Player[]> GetAll();
+    Task<Player> Create(Player player);
+    Task<Player> Modify(Guid id, ModifiedPlayer player);
+    Task<Player> Delete(Guid id);
 
     //Item
-    IEnumerable<Item> GetItem(Guid id);
-    IEnumerable<Item[]> GetAllItems();
-    IEnumerable<Item> CreateItem(Guid id, Item item);
-    IEnumerable<Item> ModifyItem(Guid id, ModifiedItem item);
-    IEnumerable<Item> DeleteItem(Guid id);
+    Task<Item> GetItem(Guid id);
+    Task<Item[]> GetAllItems();
+    Task<Item> CreateItem(Guid id, Item item);
+    Task<Item> ModifyItem(Guid id, ModifiedItem item);
+    Task<Item> DeleteItem(Guid id);
 }

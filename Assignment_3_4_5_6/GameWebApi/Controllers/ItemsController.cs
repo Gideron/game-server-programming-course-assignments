@@ -23,19 +23,19 @@ namespace GameWebApi.Controllers
 
         [HttpGet]
         [Route("{itemId}")]
-        public IEnumerable<Item> Get(Guid id)
+        public async Task<Item> Get(Guid id)
         {
-            return _repository.GetItem(id);
+            return await _repository.GetItem(id);
         }
 
         [HttpGet]
-        public IEnumerable<Item[]> GetAll()
+        public async Task<Item[]> GetAll()
         {
-            return _repository.GetAllItems();
+            return await _repository.GetAllItems();
         }
 
         [HttpPost]
-        public IEnumerable<Item> Create([FromBody] NewItem newItem)
+        public async Task<Item> Create([FromBody] NewItem newItem)
         {
             //if(newItem.Type == Item.ItemType.SWORD && player.Level < 3)
             //    throw error
@@ -48,21 +48,21 @@ namespace GameWebApi.Controllers
                 CreationDate = DateTime.Now
                 
             };
-            return _repository.CreateItem(id, item);
+            return await _repository.CreateItem(id, item);
         }
 
         [HttpPut]
         [Route("{itemId}")]
-        public IEnumerable<Item> GetAll(Guid id, [FromBody] ModifiedItem item)
+        public async Task<Item> GetAll(Guid id, [FromBody] ModifiedItem item)
         {
-            return _repository.ModifyItem(id, item);
+            return await _repository.ModifyItem(id, item);
         }
 
         [HttpDelete]
         [Route("{itemId}")]
-        public IEnumerable<Item> Delete(Guid id)
+        public async Task<Item> Delete(Guid id)
         {
-            return _repository.DeleteItem(id);
+            return await _repository.DeleteItem(id);
         }
     }
 }

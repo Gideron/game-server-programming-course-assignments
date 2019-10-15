@@ -23,19 +23,20 @@ namespace GameWebApi.Controllers
 
         [HttpGet]
         [Route("{playerId}")]
-        public IEnumerable<Player> Get(Guid id)
+        public async Task<Player> Get(Guid id)
         {
-            return _repository.Get(id);
+            return await _repository.Get(id);
         }
 
         [HttpGet]
-        public IEnumerable<Player[]> GetAll()
+        [Route("")]
+        public async Task<Player[]> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
         [HttpPost]
-        public IEnumerable<Player> Create([FromBody] NewPlayer newPlayer)
+        public async Task<Player> Create([FromBody] NewPlayer newPlayer)
         {
             var player = new Player()
             {
@@ -43,21 +44,21 @@ namespace GameWebApi.Controllers
                 Name = newPlayer.Name,
                 CreationTime = DateTime.Now
             };
-            return _repository.Create(player);
+            return await _repository.Create(player);
         }
 
         [HttpPut]
         [Route("{playerId}")]
-        public IEnumerable<Player> GetAll(Guid id, [FromBody] ModifiedPlayer player)
+        public async Task<Player> GetAll(Guid id, [FromBody] ModifiedPlayer player)
         {
-            return _repository.Modify(id, player);
+            return await _repository.Modify(id, player);
         }
 
         [HttpDelete]
         [Route("{playerId}")]
-        public IEnumerable<Player> Delete(Guid id)
+        public async Task<Player> Delete(Guid id)
         {
-            return _repository.Delete(id);
+            return await _repository.Delete(id);
         }
     }
 }

@@ -7,59 +7,70 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 
 public class MongoDbRepository : IRepository {
-    private string txt_file = "game-dev.txt";
 
-    public IEnumerable<Player> Get(Guid id)
+    private readonly IMongoCollection<Player> _collection;
+    private readonly IMongoCollection<BsonDocument> _bsonDocumentCollection;
+
+    public MongoDbRepository()
+    {
+        var mongoClient = new MongoClient("mongodb://localhost:27017");
+        var database = mongoClient.GetDatabase("assignment_db");
+        _collection = database.GetCollection<Player>("players");
+        _bsonDocumentCollection = database.GetCollection<BsonDocument>("players");
+    }
+
+    public async Task<Player> Get(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Player[]> GetAll()
+    public async Task<Player[]> GetAll()
     {
-        MongoClient client = new MongoClient();
-        //MongoServer server = client.GetServer();
-        MongoDatabase db = client.GetDatabase("assignment_db");
-        MongoCollection<Player> collection = db.GetCollection<Player>("players");
+        var players = await _collection.Find(new BsonDocument()).ToListAsync();
+        //Console.WriteLine(players[0]);
+        Console.WriteLine("-------------------------------------\n--------------------------------------");
+        Console.WriteLine(players);
+        return players.ToArray();
 
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
-    public IEnumerable<Player> Create(Player player)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<Player> Modify(Guid id, ModifiedPlayer player)
+    public async Task<Player> Create(Player player)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Player> Delete(Guid id)
+    public async Task<Player> Modify(Guid id, ModifiedPlayer player)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> GetItem(Guid id)
+    public async Task<Player> Delete(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item[]> GetAllItems()
+    public async Task<Item> GetItem(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> CreateItem(Guid id, Item item)
+    public async Task<Item[]> GetAllItems()
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> ModifyItem(Guid id, ModifiedItem item)
+    public async Task<Item> CreateItem(Guid id, Item item)
     {
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Item> DeleteItem(Guid id)
+    public async Task<Item> ModifyItem(Guid id, ModifiedItem item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<Item> DeleteItem(Guid id)
     {
         throw new NotImplementedException();
     }
