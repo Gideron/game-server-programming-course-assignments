@@ -1,0 +1,19 @@
+Collection name = "players"
+
+----------- Player example ---------------
+
+{
+    "_id":"5da5e62326eec10d8cc07de8",
+    "name":"Player Name",
+    "score":0,
+    "level":0,
+    "isBanned":false,
+    "creationTime":"6748055046979584001",
+    "items":[
+        {
+            "level":0,
+            "type":"sword",
+            "creationDate":"0"
+        }
+    ]
+}
