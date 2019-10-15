@@ -1,6 +1,11 @@
-Collection name = "players"
+Steps:
+    1. Create database "assignment_db"
+    2. Create collection "players"
+    3. Import file 'player_example.json' to collection
+
 
 ----------- Player example ---------------
+can be found in 'player_example.json' for easier import
 
 {
     "_id":"5da5e62326eec10d8cc07de8",
@@ -13,7 +18,7 @@ Collection name = "players"
         {
             "level":0,
             "type":"sword",
-            "creationDate":"0"
+            "creationTime":"0"
         }
     ]
 }
