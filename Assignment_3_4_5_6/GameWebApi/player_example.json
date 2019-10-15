@@ -1,0 +1,1 @@
+{"name":"Player name","score":{"$numberInt":"0"},"level":{"$numberInt":"0"},"isBanned":false,"creationTime":{"$timestamp":{"t":1571159146,"i":1}},"items":[{"level":{"$numberInt":"0"},"type":"sword","creationTime":{"$timestamp":{"t":0,"i":0}}}]}
