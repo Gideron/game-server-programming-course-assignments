@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5da6e8f58be9c920a4fbd348"},"Id":{"$binary":{"base64":"qmCd1BQgQka8RlPbNJEWKg==","subType":"03"}},"Name":"new player name","Score":{"$numberInt":"0"},"Level":{"$numberInt":"0"},"IsBanned":false,"CreationDate":{"$date":{"$numberLong":"1571219701637"}},"Items":[]}

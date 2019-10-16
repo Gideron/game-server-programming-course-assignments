@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 public class Player
 {
@@ -8,12 +9,13 @@ public class Player
     {
         Items = new List<Item>();
     }
-    //[BsonId]
+    [BsonId]
+    public ObjectId ObjId { get; set; }
     public Guid Id { get; set; }
     public string Name { get; set; }
     public int Score { get; set; }
     public int Level { get; set; }
     public bool IsBanned { get; set; }
-    public DateTime CreationTime { get; set; }
+    public DateTime CreationDate { get; set; }
     public List<Item> Items { get; set; }
 }

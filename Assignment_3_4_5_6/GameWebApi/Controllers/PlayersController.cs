@@ -42,15 +42,17 @@ namespace GameWebApi.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = newPlayer.Name,
-                CreationTime = DateTime.Now
+                CreationDate = DateTime.Now
             };
             return await _repository.Create(player);
         }
 
-        [HttpPut]
+        [HttpPatch]
         [Route("{playerId}")]
-        public async Task<Player> GetAll(Guid id, [FromBody] ModifiedPlayer player)
+        public async Task<Player> Modify(Guid id, [FromBody] ModifiedPlayer player)
         {
+            Console.WriteLine("================\n============");
+            Console.WriteLine("guid: " + id);
             return await _repository.Modify(id, player);
         }
 

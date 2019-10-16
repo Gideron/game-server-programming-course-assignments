@@ -1,0 +1,17 @@
+Steps:
+    1. Create database "assignment_db"
+    2. Create collection "players"
+    3. Import file 'player_example.json' to collection
+	3.1. Better way is to run the GameWebApi and create new player with api
+		http://localhost:5000/api/players
+		body => {"Name":"new player name"}
+
+---Get all players----
+http://localhost:5000/api/players
+
+---Get player with id----
+http://localhost:5000/api/players/?Id="d49d60aa-2014-4642-bc46-53db3491162a"
+
+---Create player----
+http://localhost:5000/api/players
+json body => {"Name":"new player name"}

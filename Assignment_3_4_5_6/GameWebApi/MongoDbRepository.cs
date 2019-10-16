@@ -21,28 +21,34 @@ public class MongoDbRepository : IRepository {
 
     public async Task<Player> Get(Guid id)
     {
-        throw new NotImplementedException();
+        var filter = Builders<Player>.Filter.Eq(p => p.Id, id);
+        return await _collection.Find(filter).FirstAsync();
+        //throw new NotImplementedException();
     }
 
     public async Task<Player[]> GetAll()
     {
         var players = await _collection.Find(new BsonDocument()).ToListAsync();
-        //Console.WriteLine(players[0]);
-        Console.WriteLine("-------------------------------------\n--------------------------------------");
-        Console.WriteLine(players);
         return players.ToArray();
-
         //throw new NotImplementedException();
     }
 
     public async Task<Player> Create(Player player)
     {
-        throw new NotImplementedException();
+        await _collection.InsertOneAsync(player);
+        return player;
+        //throw new NotImplementedException();
     }
 
     public async Task<Player> Modify(Guid id, ModifiedPlayer player)
     {
-        throw new NotImplementedException();
+        Player modifiedPlayer = Get(id).Result;
+        modifiedPlayer.Score = player.Score;
+
+        FilterDefinition<Player> filter = Builders<Player>.Filter.Eq(p => p.Id, id);
+        await _collection.ReplaceOneAsync(filter, modifiedPlayer);
+        return modifiedPlayer;
+        //throw new NotImplementedException();
     }
 
     public async Task<Player> Delete(Guid id)
