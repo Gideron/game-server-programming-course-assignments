@@ -2,9 +2,11 @@ using System;
 using System.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json; 
 
 public class FileRepository : IRepository {
-    private string txt_file = "game-dev.txt";
+    private string filePath = "game-dev.txt";
     //File.ReadAllText  File.WriteAllText
 
     public async Task<Player> Get(Guid id)
@@ -19,18 +21,19 @@ public class FileRepository : IRepository {
 
     public async Task<Player[]> GetAll()
     {
-        /*if (!File.Exists(filePath))
-            throw new NotImplementedException();
+        if (!File.Exists(filePath))
+            throw new NotImplementedException("Could not find file");
 
         try
         {
             string responseBody = File.ReadAllText(filePath);
-            return responseBody;
+            PlayerList pl = JsonConvert.DeserializeObject<PlayerList>(responseBody);
+            return pl.Players.ToArray();
         }
         catch
         {
             throw new NotImplementedException("Could not get players");
-        }*/
+        }
         throw new NotImplementedException("Could not get players");
     }
 

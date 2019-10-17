@@ -19,3 +19,11 @@ public class Player
     public DateTime CreationDate { get; set; }
     public List<Item> Items { get; set; }
 }
+
+public class PlayerList {
+    public PlayerList()
+    {
+        Players = new List<Player>();
+    }
+    public List<Player> Players { get; set; }
+}
