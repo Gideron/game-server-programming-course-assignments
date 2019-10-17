@@ -6,7 +6,7 @@ using System.IO;
 using Newtonsoft.Json; 
 
 public class FileRepository : IRepository {
-    private string filePath = "game-dev.txt";
+    private string filePath = "game-dev.json";
 
     public async Task<Player> Get(Guid id)
     {
@@ -25,8 +25,11 @@ public class FileRepository : IRepository {
 
         try
         {
+            Console.WriteLine("-----GetAll TRY--------");
             string responseBody = File.ReadAllText(filePath);
+            Console.WriteLine("-----file read -> deserialize--------");
             PlayerList pl = JsonConvert.DeserializeObject<PlayerList>(responseBody);
+            Console.WriteLine("-----return--------");
             return pl.Players.ToArray();
         }
         catch

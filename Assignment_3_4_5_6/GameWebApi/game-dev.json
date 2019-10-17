@@ -1,0 +1,13 @@
+﻿{
+    "PlayerList":[
+        {
+            "Id":"GNIc990lbka9qlNJpzH02w==",
+            "Name":"player name",
+            "Score":1,
+            "Level":1,
+            "IsBanned":false,
+            "Items":[],
+            "CreationDate":"2019-10-17T15:11:47.749Z"
+        }
+    ]
+}
