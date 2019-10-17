@@ -43,18 +43,18 @@ public class FileRepository : IRepository {
         throw new NotImplementedException();
     }
 
-    public async Task<Player> Create(NewPlayer player)
+    public async Task<Player> Create(Player player)
     {
-       /* if (!File.Exists(filePath))
+       if (!File.Exists(filePath))
             throw new NotImplementedException("Could not find file");
     
         try
         {
             string responseBody = File.ReadAllText(filePath);
             PlayerList pl = JsonConvert.DeserializeObject<PlayerList>(responseBody);
-            Player created = pl.Players.Add()
+            pl.Players.Add(player);
             string newPlayerList = JsonConvert.SerializeObject(pl);
-            File.WriteAllText(filePath, newPlayerList, Encoding.UTF8);
+            File.WriteAllText(filePath, newPlayerList);
             return player;
         }
         catch
@@ -62,7 +62,7 @@ public class FileRepository : IRepository {
             throw new NotImplementedException("Could not create players");
         }
 
-        throw new NotImplementedException();*/
+        throw new NotImplementedException();
     }
 
     public async Task<Player> Modify(Guid id, ModifiedPlayer player)
