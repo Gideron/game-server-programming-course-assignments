@@ -48,6 +48,17 @@ public class MongoDbRepository : IRepository {
         //throw new NotImplementedException();
     }
 
+    public async Task<Player[]> GetTopPlayers()
+    {
+        List<Player> players = await _collection.Find(new BsonDocument()).ToListAsync();
+        players.Sort((p1, p2) => p2.Score.CompareTo(p1.Score));
+        if(players.Count < 10)
+            return players.GetRange(0, players.Count).ToArray();
+        else
+            return players.GetRange(0, 10).ToArray();
+        //throw new NotImplementedException();
+    }
+
     public async Task<Player> Create(Player player)
     {
         await _collection.InsertOneAsync(player);

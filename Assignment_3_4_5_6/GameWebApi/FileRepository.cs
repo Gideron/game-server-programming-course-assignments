@@ -43,6 +43,11 @@ public class FileRepository : IRepository {
         throw new NotImplementedException();
     }
 
+    public async Task<Player[]> GetTopPlayers()
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Player> Create(Player player)
     {
        if (!File.Exists(filePath))

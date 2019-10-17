@@ -54,6 +54,14 @@ namespace GameWebApi.Controllers
             return await _repository.GetAll();
         }
 
+        //assignment 6 query 10
+        [HttpGet]
+        [Route("top")]
+        public async Task<Player[]> GetTopPlayers()
+        {
+            return await _repository.GetTopPlayers();
+        }
+
         [HttpPost]
         public async Task<Player> Create([FromBody] NewPlayer newPlayer)
         {

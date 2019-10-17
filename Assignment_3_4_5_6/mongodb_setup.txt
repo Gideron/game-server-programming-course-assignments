@@ -1,4 +1,4 @@
-Steps:
+Steps:  Verify you have correct Repository in use from Startup.cs!
     1. Create database "assignment_db"
     2. Create collection "players"
     3. Import file 'player_example.json' to collection
@@ -24,7 +24,10 @@ http://localhost:5000/api/players/{playerId:guid}
 ---Get player with name---- GET
 http://localhost:5000/api/players/{playerName}
 
----Update player---- PATCH
+---GetTopPlayers---- GET
+http://localhost:5000/api/players/top
+
+---Modify/Update player---- PATCH
 http://localhost:5000/api/players
 json body => {"Score":1}
 

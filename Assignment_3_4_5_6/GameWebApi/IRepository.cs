@@ -8,6 +8,7 @@ public interface IRepository
     //Player
     Task<Player> Get(Guid id);
     Task<Player[]> GetAll();
+    Task<Player[]> GetTopPlayers();
     Task<Player> Create(Player player);
     Task<Player> Modify(Guid id, ModifiedPlayer player);
     Task<Player> Delete(Guid id);

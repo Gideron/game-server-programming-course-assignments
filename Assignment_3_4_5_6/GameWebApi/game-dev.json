@@ -1,13 +1,1 @@
-﻿{
-    "PlayerList":[
-        {
-            "Id":"GNIc990lbka9qlNJpzH02w==",
-            "Name":"player name",
-            "Score":1,
-            "Level":1,
-            "IsBanned":false,
-            "Items":[],
-            "CreationDate":"2019-10-17T15:11:47.749Z"
-        }
-    ]
-}
+{"Players":[{"ObjId":"000000000000000000000000","Id":"c591d39f-f76e-481d-b488-90e27f0ce2b4","Name":"new player name","Score":0,"Level":0,"IsBanned":false,"CreationDate":"2019-10-17T23:56:37.0388163+03:00","Items":[]}]}
