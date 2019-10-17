@@ -14,11 +14,11 @@ json body => {"Name":"player name"}
 http://localhost:5000/api/players
 
 ---Get players with score over x----
-http://localhost:5000/api/players/?Score=1
+http://localhost:5000/api/players/{score:int}
 
 ---Get player with id----
-http://localhost:5000/api/players/?Id="d49d60aa-2014-4642-bc46-53db3491162a"
+http://localhost:5000/api/players/{playerId:guid}
 
 ---Get player with name----
-http://localhost:5000/api/players/?name="player name"
+http://localhost:5000/api/players/{playerName}
 
