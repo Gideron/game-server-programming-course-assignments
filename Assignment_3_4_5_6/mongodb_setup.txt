@@ -6,6 +6,8 @@ Steps:
 		http://localhost:5000/api/players
 		body => {"Name":"new player name"}
 
+====== Players ========
+
 ---Create player---- POST
 http://localhost:5000/api/players
 json body => {"Name":"player name"}
@@ -25,6 +27,8 @@ http://localhost:5000/api/players/{playerName}
 ---Update player---- PATCH
 http://localhost:5000/api/players
 json body => {"Score":1}
+
+====== Items ========
 
 ---Create item---- PUT
 http://localhost:5000/api/players/{playerId:guid}/items
