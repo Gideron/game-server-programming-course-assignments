@@ -36,3 +36,8 @@ json body => {"Score":1}
 ---Create item---- PUT
 http://localhost:5000/api/players/{playerId:guid}/items
 json body => {"Level":1, "Type":Item.SWORD}
+
+
+===== WIP ======
+---Increase player score---- PUT --> returns 404
+http://localhost:5000/api/players/{playerId:guid}

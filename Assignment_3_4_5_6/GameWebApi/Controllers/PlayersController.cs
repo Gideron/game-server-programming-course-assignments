@@ -25,7 +25,6 @@ namespace GameWebApi.Controllers
         [Route("{playerId:guid}")]
         public async Task<Player> Get(Guid playerId)
         {
-            Console.WriteLine("-----Get------");
             return await _repository.Get(playerId);
         }
 
@@ -34,7 +33,6 @@ namespace GameWebApi.Controllers
         [Route("{minScore:int}")]
         public async Task<Player[]> GetAllWithScoreOverX(int minScore)
         {
-            Console.WriteLine("-----GetAllWithScoreOverX------");
             return await _repository.GetAllWithScoreOverX(minScore);
         }
 
@@ -43,7 +41,6 @@ namespace GameWebApi.Controllers
         [Route("{name}")]
         public async Task<Player> GetWithName(string name)
         {
-            Console.WriteLine("-----GetWithName------");
             return await _repository.GetWithName(name);
         }
 
@@ -76,12 +73,18 @@ namespace GameWebApi.Controllers
 
         //assignment 6 query 6
         [HttpPatch]
-        [Route("{playerId}")]
+        [Route("{playerId:guid}")]
         public async Task<Player> Modify(Guid playerId, [FromBody] ModifiedPlayer player)
         {
-            Console.WriteLine("================\n============");
-            Console.WriteLine("guid: " + playerId);
             return await _repository.Modify(playerId, player);
+        }
+
+        //assignment 6 query 7
+        [HttpPut]
+        [Route("{playerId:guid}")]
+        public async Task<Player> AddScore(Guid playerId)
+        {
+            return await _repository.AddPlayerScore(playerId);
         }
 
         [HttpDelete]

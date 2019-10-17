@@ -98,6 +98,11 @@ public class FileRepository : IRepository {
         }
     }
 
+    public async Task<Player> AddPlayerScore(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Player> Delete(Guid id)
     {
         if (!File.Exists(filePath))

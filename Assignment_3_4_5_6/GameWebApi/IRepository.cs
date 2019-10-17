@@ -11,6 +11,7 @@ public interface IRepository
     Task<Player[]> GetTopPlayers();
     Task<Player> Create(Player player);
     Task<Player> Modify(Guid id, ModifiedPlayer player);
+    Task<Player> AddPlayerScore(Guid id);
     Task<Player> Delete(Guid id);
     Task<Player> GetWithName(string name);
     Task<Player[]> GetAllWithScoreOverX(int minScore);
