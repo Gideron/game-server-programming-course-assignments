@@ -9,6 +9,17 @@ public class Player
     {
         Items = new List<Item>();
     }
+    public Player(NewPlayer newPlayer)
+    {
+        Id = Guid.NewGuid();
+        Name = newPlayer.Name;
+        Score = 0;
+        Level = 0;
+        IsBanned = false;
+        CreationDate = DateTime.Now;
+        Items = new List<Item>();
+        
+    }
     [BsonId]
     public ObjectId ObjId { get; set; }
     public Guid Id { get; set; }
