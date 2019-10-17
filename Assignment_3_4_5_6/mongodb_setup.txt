@@ -6,19 +6,26 @@ Steps:
 		http://localhost:5000/api/players
 		body => {"Name":"new player name"}
 
----Create player----
+---Create player---- POST
 http://localhost:5000/api/players
 json body => {"Name":"player name"}
 
----Get all players----
+---Get all players---- GET
 http://localhost:5000/api/players
 
----Get players with score over x----
+---Get players with score over x---- GET
 http://localhost:5000/api/players/{score:int}
 
----Get player with id----
+---Get player with id---- GET
 http://localhost:5000/api/players/{playerId:guid}
 
----Get player with name----
+---Get player with name---- GET
 http://localhost:5000/api/players/{playerName}
 
+---Update player---- PATCH
+http://localhost:5000/api/players
+json body => {"Score":1}
+
+---Create item---- PUT
+http://localhost:5000/api/players/{playerId:guid}/items
+json body => {"Level":1, "Type":Item.SWORD}

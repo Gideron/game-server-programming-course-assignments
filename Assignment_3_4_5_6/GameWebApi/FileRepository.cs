@@ -17,9 +17,9 @@ public class FileRepository : IRepository {
         throw new NotImplementedException();
     }
 
-    async Task<string> IRepository.GetAll()
+    public async Task<Player[]> GetAll()
     {
-        if (!File.Exists(filePath))
+        /*if (!File.Exists(filePath))
             throw new NotImplementedException();
 
         try
@@ -30,7 +30,8 @@ public class FileRepository : IRepository {
         catch
         {
             throw new NotImplementedException("Could not get players");
-        }
+        }*/
+        throw new NotImplementedException("Could not get players");
     }
 
     public async Task<Player[]> GetAllWithScoreOverX(int score)
@@ -38,9 +39,9 @@ public class FileRepository : IRepository {
         throw new NotImplementedException();
     }
 
-    async Task<Player> IRepository.Create(Player player)
+    public async Task<Player> Create(Player player)
     {
-        if (!File.Exists(filePath))
+        /*if (!File.Exists(filePath))
         {
             throw new NotImplementedException();
         }
@@ -57,7 +58,7 @@ public class FileRepository : IRepository {
         catch
         {
             throw new NotImplementedException("Could not get players");
-        }
+        }*/
 
         throw new NotImplementedException();
     }

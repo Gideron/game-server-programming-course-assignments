@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace GameWebApi.Controllers
 {
     [ApiController]
-    [Route("api/players/{playerId}/items")]
+    [Route("api/players/{playerId:guid}/items")]
     public class ItemsController : ControllerBase
     {
         private readonly ILogger<ItemsController> _logger;
@@ -34,12 +34,12 @@ namespace GameWebApi.Controllers
             return await _repository.GetAllItems();
         }
 
+        //assignment 6 query 8
         [HttpPost]
-        public async Task<Item> Create([FromBody] NewItem newItem)
+        public async Task<Item> Create(Guid playerId, [FromBody] NewItem newItem)
         {
             //if(newItem.Type == Item.ItemType.SWORD && player.Level < 3)
             //    throw error
-            Guid id = Guid.NewGuid(); //should be player id
 
             var item = new Item()
             {
@@ -48,7 +48,7 @@ namespace GameWebApi.Controllers
                 CreationDate = DateTime.Now
                 
             };
-            return await _repository.CreateItem(id, item);
+            return await _repository.CreateItem(playerId, item);
         }
 
         [HttpPut]

@@ -83,7 +83,11 @@ public class MongoDbRepository : IRepository {
 
     public async Task<Item> CreateItem(Guid id, Item item)
     {
-        throw new NotImplementedException();
+        FilterDefinition<Player> filter = Builders<Player>.Filter.Eq(p => p.Id, id);
+        var update = Builders<Player>.Update.Push("Items", item);
+        await _collection.FindOneAndUpdateAsync(filter, update);
+        return item;
+        //throw new NotImplementedException();
     }
 
     public async Task<Item> ModifyItem(Guid id, ModifiedItem item)

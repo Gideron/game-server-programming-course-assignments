@@ -66,13 +66,14 @@ namespace GameWebApi.Controllers
             return await _repository.Create(player);
         }
 
+        //assignment 6 query 6
         [HttpPatch]
         [Route("{playerId}")]
-        public async Task<Player> Modify(Guid id, [FromBody] ModifiedPlayer player)
+        public async Task<Player> Modify(Guid playerId, [FromBody] ModifiedPlayer player)
         {
             Console.WriteLine("================\n============");
-            Console.WriteLine("guid: " + id);
-            return await _repository.Modify(id, player);
+            Console.WriteLine("guid: " + playerId);
+            return await _repository.Modify(playerId, player);
         }
 
         [HttpDelete]
