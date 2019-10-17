@@ -6,12 +6,16 @@ Steps:
 		http://localhost:5000/api/players
 		body => {"Name":"new player name"}
 
+---Create player----
+http://localhost:5000/api/players
+json body => {"Name":"player name"}
+
 ---Get all players----
 http://localhost:5000/api/players
 
 ---Get player with id----
 http://localhost:5000/api/players/?Id="d49d60aa-2014-4642-bc46-53db3491162a"
 
----Create player----
-http://localhost:5000/api/players
-json body => {"Name":"new player name"}
+---Get player with name----
+http://localhost:5000/api/players/?name="player name"
+

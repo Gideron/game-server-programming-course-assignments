@@ -26,6 +26,13 @@ public class MongoDbRepository : IRepository {
         //throw new NotImplementedException();
     }
 
+    public async Task<Player> GetWithName(string name)
+    {
+        var filter = Builders<Player>.Filter.Eq(p => p.Name, name);
+        return await _collection.Find(filter).FirstAsync();
+        //throw new NotImplementedException();
+    }
+
     public async Task<Player[]> GetAll()
     {
         var players = await _collection.Find(new BsonDocument()).ToListAsync();

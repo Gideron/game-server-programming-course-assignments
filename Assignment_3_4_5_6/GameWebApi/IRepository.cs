@@ -11,6 +11,7 @@ public interface IRepository
     Task<Player> Create(Player player);
     Task<Player> Modify(Guid id, ModifiedPlayer player);
     Task<Player> Delete(Guid id);
+    Task<Player> GetWithName(string id);
 
     //Item
     Task<Item> GetItem(Guid id);

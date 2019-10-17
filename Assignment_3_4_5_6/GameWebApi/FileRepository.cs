@@ -12,6 +12,11 @@ public class FileRepository : IRepository {
         throw new NotImplementedException();
     }
 
+    public async Task<Player> GetWithName(string name)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Player[]> GetAll()
     {
         throw new NotImplementedException();

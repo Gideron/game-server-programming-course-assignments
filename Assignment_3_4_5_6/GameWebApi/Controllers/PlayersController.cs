@@ -62,5 +62,13 @@ namespace GameWebApi.Controllers
         {
             return await _repository.Delete(id);
         }
+
+        //assignment 6 query 2
+        [HttpGet]
+        [Route("{name}")]
+        public async Task<Player> GetWithName(string name)
+        {
+            return await _repository.GetWithName(name);
+        }
     }
 }
