@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 
 public class FileRepository : IRepository {
     private string filePath = "game-dev.txt";
-    //File.ReadAllText  File.WriteAllText
 
     public async Task<Player> Get(Guid id)
     {
@@ -34,7 +33,6 @@ public class FileRepository : IRepository {
         {
             throw new NotImplementedException("Could not get players");
         }
-        throw new NotImplementedException("Could not get players");
     }
 
     public async Task<Player[]> GetAllWithScoreOverX(int score)

@@ -8,7 +8,4 @@ public class NewItem
 
     [EnumDataType(typeof(Item.ItemType))]
     public Item.ItemType Type { get; set; }
-
-    /*[ValidDate]
-    public DateTime CreationDate { get; set; }*/
 }
