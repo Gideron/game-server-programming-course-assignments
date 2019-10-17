@@ -74,7 +74,25 @@ public class FileRepository : IRepository {
 
     public async Task<Player> Delete(Guid id)
     {
-        throw new NotImplementedException();
+        if (!File.Exists(filePath))
+            throw new NotImplementedException("Could not find file");
+
+        try
+        {
+            string responseBody = File.ReadAllText(filePath);
+            PlayerList pl = JsonConvert.DeserializeObject<PlayerList>(responseBody);
+            Player removed = pl.Players.Find(p => p.Id == id);
+            List<Player> remainingPlayers = new List<Player>();
+            remainingPlayers = pl.Players.FindAll(p => p.Id != id);
+            pl.Players = remainingPlayers;
+            string newPlayerList = JsonConvert.SerializeObject(pl);
+            File.WriteAllText(filePath, newPlayerList);
+            return removed;
+        }
+        catch
+        {
+            throw new NotImplementedException("Could not delete player");
+        }
     }
 
     public async Task<Item> GetItem(Guid id)
