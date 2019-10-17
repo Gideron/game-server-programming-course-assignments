@@ -29,6 +29,14 @@ namespace GameWebApi.Controllers
         }
 
         [HttpGet]
+        [Route("{playerScore}")]
+        public async Task<Player[]> GetAllWithScoreOverX(int score)
+        {
+            Console.WriteLine("-----GetAllWithScoreOverX------");
+            return await _repository.GetAllWithScoreOverX(score);
+        }
+
+        [HttpGet]
         [Route("")]
         public async Task<Player[]> GetAll()
         {

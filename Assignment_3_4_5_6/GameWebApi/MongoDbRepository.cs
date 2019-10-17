@@ -40,6 +40,14 @@ public class MongoDbRepository : IRepository {
         //throw new NotImplementedException();
     }
 
+    public async Task<Player[]> GetAllWithScoreOverX(int score)
+    {
+        var filter = Builders<Player>.Filter.Gte(p => p.Score, score);
+        var players = await _collection.Find(filter).ToListAsync();
+        return players.ToArray();
+        //throw new NotImplementedException();
+    }
+
     public async Task<Player> Create(Player player)
     {
         await _collection.InsertOneAsync(player);

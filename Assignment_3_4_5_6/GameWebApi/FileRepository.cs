@@ -22,6 +22,11 @@ public class FileRepository : IRepository {
         throw new NotImplementedException();
     }
 
+    public async Task<Player[]> GetAllWithScoreOverX(int score)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<Player> Create(Player player)
     {
         throw new NotImplementedException();
