@@ -22,18 +22,29 @@ namespace GameWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("{playerId}")]
-        public async Task<Player> Get(Guid id)
+        [Route("{playerId:guid}")]
+        public async Task<Player> Get(Guid playerId)
         {
-            return await _repository.Get(id);
+            Console.WriteLine("-----Get------");
+            return await _repository.Get(playerId);
         }
 
+        //assignment 6 query 1
         [HttpGet]
-        [Route("{playerScore}")]
-        public async Task<Player[]> GetAllWithScoreOverX(int score)
+        [Route("{minScore:int}")]
+        public async Task<Player[]> GetAllWithScoreOverX(int minScore)
         {
             Console.WriteLine("-----GetAllWithScoreOverX------");
-            return await _repository.GetAllWithScoreOverX(score);
+            return await _repository.GetAllWithScoreOverX(minScore);
+        }
+
+        //assignment 6 query 2
+        [HttpGet]
+        [Route("{name}")]
+        public async Task<Player> GetWithName(string name)
+        {
+            Console.WriteLine("-----GetWithName------");
+            return await _repository.GetWithName(name);
         }
 
         [HttpGet]
@@ -69,14 +80,6 @@ namespace GameWebApi.Controllers
         public async Task<Player> Delete(Guid id)
         {
             return await _repository.Delete(id);
-        }
-
-        //assignment 6 query 2
-        [HttpGet]
-        [Route("{name}")]
-        public async Task<Player> GetWithName(string name)
-        {
-            return await _repository.GetWithName(name);
         }
     }
 }

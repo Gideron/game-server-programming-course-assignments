@@ -12,7 +12,7 @@ public interface IRepository
     Task<Player> Modify(Guid id, ModifiedPlayer player);
     Task<Player> Delete(Guid id);
     Task<Player> GetWithName(string name);
-    Task<Player[]> GetAllWithScoreOverX(int score);
+    Task<Player[]> GetAllWithScoreOverX(int minScore);
 
     //Item
     Task<Item> GetItem(Guid id);

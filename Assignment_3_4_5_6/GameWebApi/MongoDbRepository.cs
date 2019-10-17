@@ -40,9 +40,9 @@ public class MongoDbRepository : IRepository {
         //throw new NotImplementedException();
     }
 
-    public async Task<Player[]> GetAllWithScoreOverX(int score)
+    public async Task<Player[]> GetAllWithScoreOverX(int minScore)
     {
-        var filter = Builders<Player>.Filter.Gte(p => p.Score, score);
+        var filter = Builders<Player>.Filter.Gte(p => p.Score, minScore);
         var players = await _collection.Find(filter).ToListAsync();
         return players.ToArray();
         //throw new NotImplementedException();
