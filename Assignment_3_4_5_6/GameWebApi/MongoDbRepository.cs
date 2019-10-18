@@ -80,7 +80,7 @@ public class MongoDbRepository : IRepository {
     public async Task<Player> AddPlayerScore(Guid id)
     {
         FilterDefinition<Player> filter = Builders<Player>.Filter.Eq(p => p.Id, id);
-        var update = Builders<Player>.Update.Set(p => p.Score, 5);
+        var update = Builders<Player>.Update.Inc(p => p.Score, 1);
         await _collection.UpdateOneAsync(filter, update);
         return Get(id).Result;
 
